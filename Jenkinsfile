@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage ('clone frontend repo') {
             steps {
-                url:'https://github.com/Siva290395/abc-frontend.git',gitbranch:'main',credentialsId:'github-credentials'
+              git url:'https://github.com/Siva290395/abc-frontend.git',gitbranch:'main',credentialsId:'github-credentials'
             }
         }
         stage ('install & build') {
