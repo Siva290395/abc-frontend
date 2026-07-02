@@ -23,7 +23,7 @@ pipeline {
         }
         stage ('deploy to s3') {
             steps {
-                with aws(credentials: 'aws-credssiva',region: 'ca-central-1') {
+                withAWS(credentials: 'aws-credssiva',region: 'ca-central-1') {
                     sh '''
                     echo "uploading to s3"
                     aws s3 sync build/ s3://$S3_BUCKET --delete
